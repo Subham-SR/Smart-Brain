@@ -59,23 +59,6 @@ class App extends Component{
 return{};
 }
 
-// calculateFaceLocation = (data) => {
-//   if (data && data.outputs && data.outputs[0].data.regions.length) {
-//     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-//     const image = document.getElementById('inputimage');
-//     const width = Number(image.width);
-//     const height = Number(image.height);
-//     return {
-//       leftCol: clarifaiFace.left_col * width,
-//       topRow: clarifaiFace.top_row * height,
-//       rightCol: clarifaiFace.right_col * width,
-//       bottomRow: clarifaiFace.bottom_row * height
-//     };
-//   }
-//   return {};
-// };
-
-
 
   displayFacebox=(box)=>{
     this.setState({box: box});
@@ -90,7 +73,7 @@ return{};
   
 onButtonClick = () => {
 this.setState({imageUrl: this.state.input});
-     fetch('http://localhost:3000/imageUrl',{
+     fetch('https://smart-brain-api-qms8.onrender.com/imageUrl',{
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -100,7 +83,7 @@ this.setState({imageUrl: this.state.input});
      .then(response=>response.json())      
      .then(response => {
            if (response) {
-            fetch('http://localhost:3000/image',{
+            fetch('https://smart-brain-api-qms8.onrender.com/image',{
               method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
