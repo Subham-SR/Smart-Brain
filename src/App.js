@@ -59,6 +59,23 @@ class App extends Component{
 return{};
 }
 
+// calculateFaceLocation = (data) => {
+//   if (data && data.outputs && data.outputs[0].data.regions.length) {
+//     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+//     const image = document.getElementById('inputimage');
+//     const width = Number(image.width);
+//     const height = Number(image.height);
+//     return {
+//       leftCol: clarifaiFace.left_col * width,
+//       topRow: clarifaiFace.top_row * height,
+//       rightCol: clarifaiFace.right_col * width,
+//       bottomRow: clarifaiFace.bottom_row * height
+//     };
+//   }
+//   return {};
+// };
+
+
 
   displayFacebox=(box)=>{
     this.setState({box: box});
